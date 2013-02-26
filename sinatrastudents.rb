@@ -1,7 +1,4 @@
-### NEED TO BE COMMENTED OUT TO RUN RACKUP ###
-# require 'rubygems'
-# require 'nokogiri'
-# require 'open-uri'
+### MODEL AND DATAMAPPER ###
 
 require 'pry'
 require 'data_mapper'
@@ -133,33 +130,6 @@ class Student
 
 end
 
-#end of class
-
-
-### NEED TO BE COMMENTED OUT TO RUN RACKUP ###
-
-# INDEX = "http://students.flatironschool.com/"
-# INDEX_DOC = Nokogiri::HTML(open(INDEX))
-
-# student_urls = INDEX_DOC.css("div.one_third > a").map do |a| 
-#     (INDEX + a.attr("href")).sub("/.", "" )
-# end
-
-# def student_scraper(student_urls)
-#   student_urls.each do |student|
-#     begin
-#     hella_student = Student.new
-#     hella_student.scrape_and_insert(student)
-#       hella_student.save
-#       "Success!"
-#     rescue => e
-#       puts "Error creating #{student}: #{e}"
-#       next
-#     end
-#   end
-# end
-
-# student_scraper(student_urls)
 
 DataMapper.finalize
 DataMapper.auto_upgrade!
